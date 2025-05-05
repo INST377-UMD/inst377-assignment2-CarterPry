@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Stocks</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
+  <script defer src="stocks.js"></script>
+</head>
+<body>
+  <nav>
+
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="stocks.html">Stocks</a></li>
+      <li><a href="dogs.html">Dogs</a></li>
+    </ul>
+
+  </nav>
+
+  <main>
+
+    <input id="ticker" placeholder="Enter ticker" />
+    <select id="days">
+      <option value="30">30 Days</option>
+      <option value="60">60 Days</option>
+      <option value="90">90 Days</option>
+    </select>
+    <button onclick="loadStock()">Get Stock</button>
+
+    <canvas id="chart"></canvas>
+
+    <h2>Top 5 Reddit Stocks</h2>
+    <table id="reddit">
+      <thead>
+        <tr>
+          <th>Ticker</th>
+          <th>Comments</th>
+          <th>Sentiment</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </main>
+
+  <div class="audio-controls">
+
+    <button onclick="annyang.start()">Turn On Audio</button>
+    <button onclick="annyang.abort()">Turn Off Audio</button>
+  </div>
+</body>
+</html>
